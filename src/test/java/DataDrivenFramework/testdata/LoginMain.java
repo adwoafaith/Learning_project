@@ -1,12 +1,7 @@
 package DataDrivenFramework.testdata;
 
-import com.beust.jcommander.Parameters;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import io.cucumber.java.After;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,14 +9,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-
 
 
 public class LoginMain {
 
     public String baseUrl = "http://www.facebook.com/";
-    String driverPath = "C:\\selenium webdriver\\ChromeDriver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe";
 
     private String username;
     private String password;
@@ -43,7 +35,6 @@ public class LoginMain {
     }
 
     public void setUp(){
-        System.setProperty("webdriver.chrome.driver",driverPath);
         driver = new ChromeDriver();
         //visit the site
         driver.get(baseUrl);
